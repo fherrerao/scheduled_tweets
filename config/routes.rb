@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :about, only: [:index]
   resources :main, only: [:index]
   root "main#index"
+  get "signup", to: "registration#new"
 end
