@@ -1,3 +1,6 @@
 <h1 class = "text-center">
   <%= "Welcome to Scheduled Tweets" %>
+  <% if @user %>
+    <%= "Logged in as: #{@user.email}" %>
+  <% end %>
 </h1>
