@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :main, only: [:index]
   root "main#index"
   get "signup", to: "registration#new"
+  post "signup", to: "registration#create"
 end
