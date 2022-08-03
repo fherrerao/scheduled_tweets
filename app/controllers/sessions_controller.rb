@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'You have successfully logged in!'
     else
-      puts 'BAD EMAIL'
       flash[:alert] = 'Invalid email or password'
       render :new
     end
