@@ -1,0 +1,13 @@
+<%= tweet.body %>
+<div class="d-flex align-items-start mb-4 gap-2 card card-body">
+  <% if tweet.twitter_account.image %>
+    <%= image_tag tweet.twitter_account.image, class: "rounded-circle" %>
+  <% end %>  
+  <%= link_to "@#{tweet.twitter_account.name}" , "https://twitter.com/#{tweet.twitter_account.username}", target: :_blank %>   
+  <% if tweet.published? %>
+    <%= link_to "See tweet", "https://twitter.com/#{tweet.twitter_account.username}/status/#{tweet.tweet_id}" %>
+    <% else %>
+      Scheduled at: <%= l tweet.publish_at, format: :short %>
+      <%= link_to "Edit tweet", edit_tweet_path(tweet) %>
+  <% end %>
+</div>
