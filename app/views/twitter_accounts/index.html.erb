@@ -4,13 +4,13 @@
 </div>
 
 <% @twitter_accounts.each do |twitter_account| %>
-  <div class="d-flex align-items-center mb-4">
+  <div class="d-flex align-items-center mb-4 gap-2">
     <% if twitter_account.image %>
       <%= image_tag twitter_account.image %>
     <% end %>
     
     <%= link_to "@#{twitter_account.name}" , "https://twitter.com/#{twitter_account.username}", target: :_blank %> 
 
-    <%= button_to "Disconect", twitter_account, method: :delete, data: { confirm: "Are you sure?", turbo: "false" } %>
+    <%= button_to "Disconect", twitter_account, method: :delete, data: { confirm: "Are you sure?", turbo: "false" }, class: "btn btn-outline-danger" %>
   </div>
 <% end %>
